@@ -12,6 +12,16 @@ const counterReducer = (state = { counter: 0}, action) => {
             counter: state.counter - 1
           };
     }
+    if(action.type === 'incrementby2'){
+        return {
+            counter: state.counter + 2
+          };
+    }
+    if(action.type === 'decrementby2'){
+        return {
+            counter: state.counter - 2
+          };
+    }
   
 };
 
@@ -29,3 +39,6 @@ for (let i = 0; i < 5; i++) {
   }
 
   store.dispatch({type : 'decrement'})
+  store.dispatch({type : 'incrementby2'})
+
+  store.dispatch({type : 'decrementby2'})
